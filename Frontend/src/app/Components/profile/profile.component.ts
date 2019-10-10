@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { faProjectDiagram, faQuoteLeft, faQuoteRight, faUserEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile',
@@ -9,6 +10,7 @@ import Chart from 'chart.js';
 export class ProfileComponent implements OnInit {
 
   ctx;
+  Icons: Array<any> = [faProjectDiagram, faQuoteLeft, faQuoteRight, faUserEdit];
 
   constructor() { }
 
@@ -17,13 +19,20 @@ export class ProfileComponent implements OnInit {
     var myChart = new Chart(this.ctx, {
       type: 'line',
       data: {
-          labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
-          datasets: [{
-              label: 'Actividad',
-              data: [12, 19, 3, 5, 2, 3, 0],
-          }]
+        labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
+        datasets: [{
+          label: 'Actividad',
+          data: [12, 19, 3, 5, 2, 3, 0],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+          ],
+          borderWidth: 1
+        }]
       },
-  });
+    });
   }
 
 }
