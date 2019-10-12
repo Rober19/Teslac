@@ -29,12 +29,14 @@ export class LoginComponent implements OnInit {
       }, 1000);
       iziToast.success({
         title: 'Usuario',
-        message: `\n\Código: ${this.FormControl.value.Username}\n\Cotraseña: ${this.FormControl.value.Password}`
+        message: `\n\Código: ${this.FormControl.value.Username}`
+        // message: `\n\Código: ${this.FormControl.value.Username}\n\Cotraseña: ${this.FormControl.value.Password}`
       });
-      this.FormControl.reset();
+    
     } else {
       console.log(this.FormControl.value);
     }
+    this.FormControl.reset();
   }
 
 }
